@@ -26,12 +26,14 @@ subway = {"six" => ["Astor Place", "Union Square", "23rd Street (6)", "28th Stre
     num_stops = (subway["#{starting_subway}"].index(starting_stop).to_i - subway["#{ending_subway}"].index(ending_stop).to_i).abs
     print "Your trip will take #{num_stops} stops!"
   else
-    intersection = subway["#{starting_subway}"] & subway["#{ending_subway}"]
+    intersection = (subway["#{starting_subway}"] & subway["#{ending_subway}"]).join
     num_stops1 = (subway["#{starting_subway}"].index(starting_stop).to_i - subway["#{starting_subway}"].index(intersection).to_i).abs
     num_stops2 = (subway["#{ending_subway}"].index(ending_stop).to_i - subway["#{ending_subway}"].index(intersection).to_i).abs
-    print subway["#{starting_subway}"].index(intersection).to_i
+
     print "Your trip will take #{num_stops1 + num_stops2} stops!"
   end
+
+
 
 #things we need to know: starting subway, starting stop, ending subway, ending stop
 
