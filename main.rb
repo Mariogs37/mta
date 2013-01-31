@@ -22,6 +22,11 @@ subway = {"six" => ["Astor Place", "Union Square", "23rd Street (6)", "28th Stre
   print "What stop would you like to end at? "
   ending_stop = gets.chomp
 
+  if (starting_subway == ending_subway)
+    num_stops = (subway["#{starting_subway}"].index(starting_stop) - subway["#{starting_subway}"].index(ending_stop)).abs
+    print "Your trip will take #{num_stops} stops!"
+  end
+
 #things we need to know: starting subway, starting stop, ending subway, ending stop
 
 #get above prompts from user and store as variables
